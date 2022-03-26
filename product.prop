@@ -1,0 +1,13 @@
+Build.BRAND=MTK
+persist.device_config.runtime_native.usap_pool_enabled=false
+ro.com.google.acsa=true
+ro.com.google.gmsversion=11_202109
+ro.miui.build.region=eea
+ro.miui.google.csp=true
+ro.miui.product.home=com.miui.home
+ro.opa.eligible_device=true
+ro.product.marketname=Redmi Note 10
+ro.product.product.marketname=Redmi Note 10
+ro.product.system_ext.marketname=Redmi Note 10
+ro.setupwizard.rotation_locked=true
+setupwizard.theme=glif_v3_light
