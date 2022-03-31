@@ -23,6 +23,6 @@ PRODUCT_MANUFACTURER := xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="camellia-user 11 RP1A.200720.011 V12.5.4.0.RKSEUXM release-keys"
+    PRIVATE_BUILD_DESC="camellia-user 11 RP1A.200720.011 V12.5.4.0.RKSMIXM release-keys"
 
-BUILD_FINGERPRINT := Redmi/camellia/camellia:11/RP1A.200720.011/V12.5.4.0.RKSEUXM:user/release-keys
+BUILD_FINGERPRINT := Redmi/camellia/camellia:11/RP1A.200720.011/V12.5.4.0.RKSMIXM:user/release-keys
