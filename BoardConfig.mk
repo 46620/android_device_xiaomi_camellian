@@ -32,6 +32,9 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
+# APEX
+DEXPREOPT_GENERATE_APEX_IMAGE := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := camellia
 TARGET_NO_BOOTLOADER := true
@@ -98,6 +101,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
+
+# VINTF
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Inherit the proprietary files
 include vendor/xiaomi/camellia/BoardConfigVendor.mk
