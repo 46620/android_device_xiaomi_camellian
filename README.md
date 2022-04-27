@@ -1,4 +1,4 @@
-# Android device tree for Redmi M2103K19C (camellia)
+# Android device tree for Redmi camellia (camellia)
 
 ```
 #
