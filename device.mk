@@ -62,17 +62,20 @@ PRODUCT_PACKAGES += \
 # Rootdir
 PRODUCT_PACKAGES += \
     getwlansar.sh \
+    init.insmod.sh \
     setsarcal.sh \
     setwlansarhigh.sh \
     setwlansarlow.sh \
 
 PRODUCT_PACKAGES += \
     fstab.emmc \
+    factory_init.connectivity.common.rc \
     factory_init.connectivity.rc \
     factory_init.project.rc \
     factory_init.rc \
     init.aee.rc \
     init.ago.rc \
+    init.connectivity.common.rc \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6833.rc \
@@ -80,6 +83,8 @@ PRODUCT_PACKAGES += \
     init.project.rc \
     init.sensor_2_0.rc \
     init.stnfc.rc \
+    init_connectivity.rc \
+    meta_init.connectivity.common.rc \
     meta_init.connectivity.rc \
     meta_init.modem.rc \
     meta_init.project.rc \

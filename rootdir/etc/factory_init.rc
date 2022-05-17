@@ -12,16 +12,14 @@ import ${ro.vendor.rc}init.nvdata.rc
 import /vendor/etc/init/microtrust.rc
 # BSP.fingerprint - 2020.11.3 - add tee start
 import /system/etc/init/android.hidl.allocator@1.0-service.rc
-import /vendor/etc/init/vendor.microtrust.hardware.capi@2.0-service.rc
-import /vendor/etc/init/android.hardware.keymaster@4.0-service.beanpod.rc
+import /vendor/etc/init/android.hardware.keymaster@4.1-service.beanpod.rc
 import /vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
-import /vendor/etc/init/vendor.microtrust.hardware.thh@2.0-service.rc
 # BSP.fingerprint - 2020.11.3 - add tee start
 import /vendor/etc/init/hw/init.aee.rc
 import /system_ext/etc/init/hw/init.aee.rc
 import /vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc
-import /vendor/etc/init/android.hardware.boot@1.1-service.rc
-import /vendor/etc/init/android.hardware.boot@1.1-service-lazy.rc
+import /vendor/etc/init/android.hardware.boot@1.2-service.rc
+import /vendor/etc/init/android.hardware.boot@1.2-service-lazy.rc
 import /vendor/etc/init/vendor.mediatek.hardware.thp@1.0-service.rc
 
 #NFC
@@ -60,7 +58,7 @@ on early-init
     mkdir /linkerconfig/default 0755
 
     # Generate ld.config.txt for early executed processes
-    exec -- /system/bin/linkerconfig --target /linkerconfig/bootstrap
+    exec -- /system/bin/bootstrap/linkerconfig --target /linkerconfig/bootstrap
     chmod 644 /linkerconfig/bootstrap/ld.config.txt
     copy /linkerconfig/bootstrap/ld.config.txt /linkerconfig/default/ld.config.txt
     chmod 644 /linkerconfig/default/ld.config.txt
@@ -75,6 +73,9 @@ on early-init
     # become available. Note that this is executed as exec_start to ensure that
     # the libraries are available to the processes started after this statement.
     exec_start apexd-bootstrap
+
+    # Generate linker config based on apex mounted in bootstrap namespace
+    update_linker_config
 
     # force on usb
     # write /sys/module/musb_hdrc/parameters/musb_force_on 1
@@ -348,7 +349,7 @@ on fs
 
 #INTERNAL_START
     write /proc/bootprof "INIT:Mount_START"
-    start vendor.boot-hal-1-1
+    start vendor.boot-hal-1-2
     mount_all --early
     write /proc/bootprof "INIT:Mount_END"
 #INTERNAL_END
@@ -360,7 +361,6 @@ on post-fs
     start system_suspend
     start merged_hal_service
     start capi-2-0
-    start power-hal-1-0
     # Once everything is setup, no need to modify /.
     # The bind+ro combination avoids modifying any other mount flags.
     # mount rootfs rootfs / remount bind ro
@@ -713,11 +713,6 @@ service permission_check /vendor/bin/permission_check
     group system radio
     oneshot
 
-service vendor.ccci_fsd /vendor/bin/ccci_fsd 0
-    user radio
-    group radio system
-    oneshot
-
 service ccci_mdinit /vendor/bin/ccci_mdinit 0
     user system
     group radio system
@@ -832,6 +827,9 @@ on property:ro.boot.usbconfig=1 && property:sys.usb.configfs=1 && property:vendo
 on property:sys.usb.config=gs3,dual_acm && property:sys.usb.configfs=1
     setprop vendor.usb.clear 1
 
+    # Generate linker config based on apex mounted in bootstrap namespace
+    update_linker_config
+
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=gs3,dual_acm && \
 property:vendor.usb.clear=2 && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "gs3_dual_acm"
@@ -849,6 +847,9 @@ property:vendor.usb.clear=2 && property:sys.usb.configfs=1
 on property:sys.usb.config=gs1gs3,dual_acm && property:sys.usb.configfs=1
     setprop vendor.usb.clear 1
 
+    # Generate linker config based on apex mounted in bootstrap namespace
+    update_linker_config
+
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=gs1gs3,dual_acm && \
 property:vendor.usb.clear=2 && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "gs1gs3_dual_acm"
@@ -865,6 +866,9 @@ property:vendor.usb.clear=2 && property:sys.usb.configfs=1
 
 on property:sys.usb.config=gs1gs3 && property:sys.usb.configfs=1
     setprop vendor.usb.clear 1
+
+    # Generate linker config based on apex mounted in bootstrap namespace
+    update_linker_config
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=gs1gs3 && \
 property:vendor.usb.clear=2 && property:sys.usb.configfs=1

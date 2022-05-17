@@ -12,6 +12,12 @@ sh_binary {
 }
 
 sh_binary {
+    name: "init.insmod.sh",
+    src: "bin/init.insmod.sh",
+    vendor: true,
+}
+
+sh_binary {
     name: "setsarcal.sh",
     src: "bin/setsarcal.sh",
     vendor: true,
@@ -30,6 +36,13 @@ sh_binary {
 }
 
 // Init configuration files
+prebuilt_etc {
+    name: "factory_init.connectivity.common.rc",
+    src: "etc/factory_init.connectivity.common.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
 prebuilt_etc {
     name: "factory_init.connectivity.rc",
     src: "etc/factory_init.connectivity.rc",
@@ -61,6 +74,13 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.ago.rc",
     src: "etc/init.ago.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.connectivity.common.rc",
+    src: "etc/init.connectivity.common.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
@@ -110,6 +130,20 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.stnfc.rc",
     src: "etc/init.stnfc.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init_connectivity.rc",
+    src: "etc/init_connectivity.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "meta_init.connectivity.common.rc",
+    src: "etc/meta_init.connectivity.common.rc",
     sub_dir: "init/hw",
     vendor: true,
 }

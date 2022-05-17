@@ -17,12 +17,12 @@ $(call inherit-product, device/xiaomi/camellia/device.mk)
 PRODUCT_DEVICE := camellia
 PRODUCT_NAME := lineage_camellia
 PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := camellia
+PRODUCT_MODEL := M2103K19C
 PRODUCT_MANUFACTURER := xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="camellia-user 11 RP1A.200720.011 V12.5.5.0.RKSMIXM release-keys"
+    PRIVATE_BUILD_DESC="camellia-user 12 SP1A.210812.016 V13.0.2.0.SKSMIXM release-keys"
 
-BUILD_FINGERPRINT := Redmi/vnd_camellia/camellia:11/RP1A.200720.011/V12.5.5.0.RKSMIXM:user/release-keys
+BUILD_FINGERPRINT := Redmi/camellia/camellia:12/SP1A.210812.016/V13.0.2.0.SKSMIXM:user/release-keys
