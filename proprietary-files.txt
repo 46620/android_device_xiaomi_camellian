@@ -1281,8 +1281,6 @@ vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@1.0.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@2.0.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@3.0.xml
 vendor/etc/vintf/manifest/vibrator-mtk-default.xml
-vendor/etc/vintf/compatibility_matrix.xml
-vendor/etc/vintf/manifest.xml
 vendor/etc/voicecommand/training/ubmfile/keyword02/hhaa/p2.3/bkd
 vendor/etc/voicecommand/training/ubmfile/keyword02/hhaa/p2.3/model.bin
 vendor/etc/voicecommand/training/ubmfile/keyword02/hhaa/p2.3/p0
