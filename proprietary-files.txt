@@ -1,4 +1,4 @@
-# Unpinned blobs from camellia-user 12 SP1A.210812.016 V13.0.2.0.SKSMIXM release-keys
+# Unpinned blobs from camellia-user 12 SP1A.210812.016 V13.0.3.0.SKSMIXM release-keys
 
 # Audio
 vendor/bin/hw/android.hardware.audio.service.mediatek
@@ -159,15 +159,6 @@ vendor/lib/hw/vendor.xiaomi.hardware.micharge@1.0-impl.so
 vendor/lib/vendor.xiaomi.hardware.micharge@1.0.so
 vendor/lib64/hw/vendor.xiaomi.hardware.micharge@1.0-impl.so
 vendor/lib64/vendor.xiaomi.hardware.micharge@1.0.so
-
-# ConsumerIr
-vendor/bin/hw/android.hardware.ir@1.0-service
-vendor/etc/init/android.hardware.ir@1.0-service.rc
-vendor/lib/hw/android.hardware.ir@1.0-impl.so
-vendor/lib/hw/consumerir.common.so
-vendor/lib64/hw/android.hardware.ir@1.0-impl.so
-vendor/lib64/hw/consumerir.camellia.so
-vendor/lib64/hw/consumerir.common.so
 
 # Display
 vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
@@ -345,6 +336,15 @@ vendor/etc/init/android.hardware.gnss-service.mediatek.rc
 vendor/bin/hw/android.hardware.health@2.1-service
 vendor/etc/init/android.hardware.health@2.1-service.rc
 vendor/etc/vintf/manifest/android.hardware.health@2.1.xml
+
+# IR
+vendor/bin/hw/android.hardware.ir@1.0-service
+vendor/etc/init/android.hardware.ir@1.0-service.rc
+vendor/lib/hw/android.hardware.ir@1.0-impl.so
+vendor/lib/hw/consumerir.common.so
+vendor/lib64/hw/android.hardware.ir@1.0-impl.so
+vendor/lib64/hw/consumerir.camellia.so
+vendor/lib64/hw/consumerir.common.so
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.1-service.beanpod
@@ -938,6 +938,7 @@ vendor/etc/md/cacerts/ikev2/GeoTrust_PCA_G3_Root.der
 vendor/etc/md/cacerts/ikev2/GeoTrust_Primary_CA.der
 vendor/etc/md/cacerts/ikev2/GeoTrust_Primary_CA_G2_ECC.der
 vendor/etc/md/cacerts/ikev2/GlobalSign_root_CA.crt
+vendor/etc/md/cacerts/ikev2/LibertyGlobalEnterprise-Root-CA-G1.crt
 vendor/etc/md/cacerts/ikev2/Root-R3.cer
 vendor/etc/md/cacerts/ikev2/Root_CA_1003.crt
 vendor/etc/md/cacerts/ikev2/VeriSignClass3G4.der
@@ -1267,6 +1268,7 @@ vendor/etc/security/cacerts_supl/111e6273.0
 vendor/etc/security/cacerts_supl/3ad48a91.0
 vendor/etc/security/cacerts_supl/7651b327.0
 vendor/etc/security/cacerts_supl/c542733d.0
+vendor/etc/security/cacerts_supl/cec771d5.0
 vendor/etc/security/cacerts_supl/f336e3d1.0
 vendor/etc/vintf/manifest/gnss-default.xml
 vendor/etc/vintf/manifest/gnss@2.1-service.xml

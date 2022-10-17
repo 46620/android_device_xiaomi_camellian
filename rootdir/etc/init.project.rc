@@ -10,6 +10,10 @@ on init
     restorecon_recursive /mnt/rescue
 on post-fs-data
 
+#Turbo sched
+    chmod 0666 /sys/module/migt/parameters/mi_viptask
+    restorecon /sys/module/migt/parameters/mi_viptask
+
 #MiBokeh
     mkdir /vendor/etc/camera 0777 system camera
     mkdir /data/vendor/camera/mibokeh 0776 system camera
